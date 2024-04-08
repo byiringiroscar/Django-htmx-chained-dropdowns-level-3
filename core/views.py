@@ -11,7 +11,7 @@ def courses(request):
 def modules(request):
     course = request.GET.get('course')
     modules = Module.objects.filter(course=course)
-    context = {'modules': modules}
+    context = {'modules': modules, 'is_htmx': True}
     return render(request, 'partials/modules.html', context)
 
 

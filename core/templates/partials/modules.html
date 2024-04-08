@@ -10,3 +10,10 @@
         <option value="{{module.pk}}">{{ module.name }}</option>
     {% endfor %}
 </select>
+
+{% if is_htmx %}
+<div id="tutors" class="my-4" hx-swap-oob="true">
+    {% include 'partials/tutors.html' %} 
+</div>
+
+{% endif %}
