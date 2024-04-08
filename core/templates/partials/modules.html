@@ -1,4 +1,9 @@
-<select class="custom-select">
+<select class="custom-select"
+        name="module"
+        hx-get="{% url 'tutors' %}" 
+        hx-trigger="change" 
+        hx-target="#tutors"
+>
     <option selected>Choose your modules</option>
     
     {% for module in modules %}
