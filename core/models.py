@@ -8,3 +8,9 @@ class Course(models.Model):
 class Module(models.Model):
     name = models.CharField(max_length=128)
     course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='modules')
+
+
+
+class Tutor(models.Model):
+    name = models.CharField(max_length=128)
+    module = models.ForeignKey(Module, on_delete=models.CASCADE, related_name='tutors')
